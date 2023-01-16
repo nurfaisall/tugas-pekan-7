@@ -1,3 +1,6 @@
+#program akan berjalan setiap minggu dan akan mengirim pesan setiap tanggal 28 dan juga akan membuat baris baru pada tanggal 28 tersebut
+
+
 # code-with-quarkus Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.

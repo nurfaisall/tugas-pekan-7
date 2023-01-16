@@ -28,6 +28,9 @@ public class Scheduler {
     @Transactional
     void addData() throws IOException {
         Date now = new Date();
+        if(increment > 12){
+            this.increment = 0;
+        }
         Date after = calendar(increment).getTime();
         if (Kebun.count() == 0) {
             kebun = new Kebun();
@@ -73,9 +76,10 @@ public class Scheduler {
                 .addInlineAttachment("result", new File("result.docx"),"text/plain","quarkus").send();
     }
 
+    //dipisah karena untuk menghindari null pointer exeption
     void write() throws IOException {
         if (null != this.id) {
-            JsonObject result = generateDocument.generateDocument(writeDocument());
+            generateDocument.generateDocument(writeDocument());
         }
     }
 
